@@ -156,6 +156,8 @@ input, select, textarea {
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		border-bottom: dotted 1px;
 		text-decoration: none;
+		color: blue;
+		list-style: none;
 	}
 
 		a:hover {
