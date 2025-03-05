@@ -44,12 +44,6 @@
   padding-right: 15px;
 }
 
-html, body {
-  overflow: auto !important;
-  -webkit-overflow-scrolling: touch;
-  min-height: 100vh;
-}
-
 .header .header-social-links a {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   padding-left: 6px;
@@ -528,9 +522,7 @@ pre {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; 
-  height: auto;
-  overflow: auto;}
+  margin-left: auto;}
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
