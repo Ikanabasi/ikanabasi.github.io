@@ -47,6 +47,7 @@
 html, body {
   overflow: auto !important;
   -webkit-overflow-scrolling: touch;
+  min-height: 100vh;
 }
 
 .header .header-social-links a {
@@ -527,7 +528,10 @@ pre {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto; 
+  height: auto;
+  min-height: 100vh;
+  overflow: auto;}
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
