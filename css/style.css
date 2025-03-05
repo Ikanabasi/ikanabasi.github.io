@@ -530,7 +530,6 @@ pre {
   margin-right: auto;
   margin-left: auto; 
   height: auto;
-  min-height: 100vh;
   overflow: auto;}
   @media (min-width: 576px) {
     .container {
