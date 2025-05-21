@@ -40,15 +40,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-html, body {
-    overflow-x: hidden;
-    height: 100%;
-}
-.hero {
-    min-height: 100vh;
-    overflow-y: auto;
-}
-
 .header .header-social-links {
   padding-right: 15px;
 }
