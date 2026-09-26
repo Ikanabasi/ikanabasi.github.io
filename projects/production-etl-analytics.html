@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="Agentic Community Resource Discovery System — project case study by Ikanabasi Akpan." />
+<title>Agentic Community Resource Discovery System | Ikanabasi Akpan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+<nav><div class="wrap nav-inner"><a class="brand" href="../index.html">IA<span>.</span></a><a class="back" href="../index.html#projects">← Back to projects</a></div></nav>
+<main class="wrap">
+<header class="hero">
+<div>
+<div class="eyebrow">Project 03 · Planned build</div>
+<h1>Agentic Community Resource Discovery System</h1>
+<p class="lead">This project explores how an AI system could keep local community-resource information current enough for a public chatbot to use without treating the open web as automatically trustworthy.</p>
+<div class="actions"><a class="button primary" href="#overview">Read the case study ↓</a><span class="button secondary disabled">Code availability noted below</span></div>
+</div>
+<aside class="summary-card">
+<h3>At a glance</h3>
+<div class="summary-list">
+<div class="summary-item"><span>Status</span><strong><span class="badge build">Planned build</span></strong></div>
+<div class="summary-item"><span>Context</span><strong>MSc / industry project concept</strong></div>
+<div class="summary-item"><span>When</span><strong>2026</strong></div>
+<div class="summary-item"><span>Tools</span><div class="stack tool-stack"><span class="chip">Agentic AI</span><span class="chip">Web Research</span><span class="chip">Verification</span><span class="chip">Structured Data</span><span class="chip">RAG</span><span class="chip">Python</span></div></div>
+</div>
+</aside>
+</header>
+
+<section id="overview"><div class="section-head"><h2>Overview</h2><p>The short version of what this project is and why I worked on it.</p></div><div class="content-card"><p>The use case came from a local media company in Sault Ste. Marie. The public-facing chatbot needs useful information about community resources, but the hard part is keeping that information current and verified.</p><p>My focus would be the data-collection side: discovering sources, extracting resource details, checking evidence, structuring the result and preserving enough source information that the chatbot can answer from something traceable.</p></div></section>
+
+<section><div class="section-head"><h2>The problem</h2><p>What needed to be solved before thinking about tools or models.</p></div><div class="two-col"><div class="list-card"><h3>What made it difficult</h3><ul><li>Community information changes frequently and may be spread across many websites.</li><li>Search results are not the same thing as verified data.</li><li>A public chatbot needs current, structured information and source traceability.</li></ul></div><div class="list-card"><h3>What I built / designed</h3><ul><li>Defined the research and verification problem the system needs to solve.</li><li>Outlined an agentic workflow for discovery, extraction, verification and structured storage.</li><li>Identified source traceability and freshness as core requirements rather than optional features.</li></ul></div></div></section>
+
+<section><div class="section-head"><h2>How it works</h2><p>A simplified view of the system or workflow.</p></div><div class="content-card"><div class="architecture"><span class="node">Public web</span><span class="arrow">→</span><span class="node">Discovery agent</span><span class="arrow">→</span><span class="node">Extract details</span><span class="arrow">→</span><span class="node">Verify sources</span><span class="arrow">→</span><span class="node">Structured resource store</span><span class="arrow">→</span><span class="node">RAG / chatbot</span></div></div></section>
+
+
+
+<section><div class="section-head"><h2>Project visuals</h2><p>This is where I’ll add real screenshots, diagrams and outputs as the project develops.</p></div><div class="visual-grid"><div class="visual-slot"><div><strong>Planned agent workflow</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Example verified resource record</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Source-evidence / freshness view</strong><span>Add screenshot / image here</span></div></div></div></section>
+
+<section><div class="section-head"><h2>Results so far</h2><p>What is finished, working or learned at the current stage.</p></div><div class="content-card"><ul class="content-list"><li>The project has a clear scope around trusted data collection rather than a generic chatbot.</li><li>The next technical step is to define the resource schema, source rules and verification criteria before writing agents.</li></ul></div></section>
+
+<section><div class="section-head"><h2>Code & repository</h2><p>Not every project can have public production code, especially employer work.</p></div><div class="content-card"><p>Implementation has not started yet; this page documents the project direction honestly.</p></div></section>
+
+<section><div class="section-head"><h2>What I’d do next</h2><p>What I’m building next, or what I would improve if I revisited the project.</p></div><div class="content-card"><ul class="content-list"><li>Define the resource data model and required fields.</li><li>Set verification rules for source quality, recency and conflicting information.</li><li>Build a small end-to-end collector on a limited set of resource categories.</li><li>Evaluate extraction accuracy, stale information and missing citations.</li></ul></div></section>
+</main>
+<footer class="wrap"><span>© <span id="year"></span> Ikanabasi Akpan</span><a href="../index.html#projects">Back to all projects ↑</a></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="Making Text-to-SQL Safe to Trust on a Large Schema — project case study by Ikanabasi Akpan." />
+<title>Making Text-to-SQL Safe to Trust on a Large Schema | Ikanabasi Akpan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+<nav><div class="wrap nav-inner"><a class="brand" href="../index.html">IA<span>.</span></a><a class="back" href="../index.html#projects">← Back to projects</a></div></nav>
+<main class="wrap">
+<header class="hero">
+<div>
+<div class="eyebrow">Project 01 · In progress</div>
+<h1>Making Text-to-SQL Safe to Trust on a Large Schema</h1>
+<p class="lead">I’m building a Text-to-SQL system that can turn a plain-English question into SQL, but the important part of the project is what happens before that SQL is ever allowed near the database.</p>
+<div class="actions"><a class="button primary" href="#overview">Read the case study ↓</a><span class="button secondary disabled">Repository link coming soon</span></div>
+</div>
+<aside class="summary-card">
+<h3>At a glance</h3>
+<div class="summary-list">
+<div class="summary-item"><span>Status</span><strong><span class="badge build">In progress</span></strong></div>
+<div class="summary-item"><span>Context</span><strong>Independent / MSc project</strong></div>
+<div class="summary-item"><span>When</span><strong>2026</strong></div>
+<div class="summary-item"><span>Tools</span><div class="stack tool-stack"><span class="chip">Python</span><span class="chip">PostgreSQL</span><span class="chip">OpenAI</span><span class="chip">SQLGlot</span><span class="chip">Schema Introspection</span><span class="chip">LLM Guardrails</span></div></div>
+</div>
+</aside>
+</header>
+
+<section id="overview"><div class="section-head"><h2>Overview</h2><p>The short version of what this project is and why I worked on it.</p></div><div class="content-card"><p>The first version of the pipeline reads the database schema and foreign keys from PostgreSQL, gives that context to an LLM, and receives generated SQL back. I deliberately stop the pipeline there instead of executing the query automatically.</p><p>The work I’m doing now is the safety layer. I’m using SQLGlot to parse generated SQL into an abstract syntax tree, check the query type, validate referenced tables against the real schema, and reject queries that should not be trusted.</p></div></section>
+
+<section><div class="section-head"><h2>The problem</h2><p>What needed to be solved before thinking about tools or models.</p></div><div class="two-col"><div class="list-card"><h3>What made it difficult</h3><ul><li>LLMs can generate SQL that looks reasonable but is wrong, unsafe or based on tables that do not exist.</li><li>A large schema makes simple prompt-only approaches harder to trust.</li><li>Automatically executing generated SQL would turn a model mistake into a database action.</li></ul></div><div class="list-card"><h3>What I built / designed</h3><ul><li>PostgreSQL schema and foreign-key introspection in Python.</li><li>LLM prompt flow that uses live schema context.</li><li>SQL parsing with SQLGlot using the PostgreSQL dialect.</li><li>Query-type validation and table validation against the known schema.</li><li>A fail-safe pattern where invalid SQL or a parse error is rejected rather than executed.</li></ul></div></div></section>
+
+<section><div class="section-head"><h2>How it works</h2><p>A simplified view of the system or workflow.</p></div><div class="content-card"><div class="architecture"><span class="node">User question</span><span class="arrow">→</span><span class="node">PostgreSQL schema</span><span class="arrow">→</span><span class="node">LLM</span><span class="arrow">→</span><span class="node">Generated SQL</span><span class="arrow">→</span><span class="node">SQLGlot safety layer</span><span class="arrow">→</span><span class="node">Approve / reject</span></div></div></section>
+
+<section><div class="section-head"><h2>Code</h2><p>A small piece of the implementation. The full repository will be linked when it is ready to share.</p></div><div class="code-wrap"><div class="code-head"><span>Representative validator logic from the current project</span><span>Python</span></div><pre><code>from sqlglot import parse_one, expressions
+from sqlglot.errors import ParseError
+
+def parse_sql(sql):
+    try:
+        return parse_one(sql, dialect=&quot;postgres&quot;)
+    except ParseError:
+        return None
+
+def validate_tables(parsed, schema_tables):
+    tables = [table.name for table in parsed.find_all(expressions.Table)]
+    return all(table in schema_tables for table in tables)</code></pre></div></section>
+
+<section><div class="section-head"><h2>Project visuals</h2><p>This is where I’ll add real screenshots, diagrams and outputs as the project develops.</p></div><div class="visual-grid"><div class="visual-slot"><div><strong>Pipeline / architecture diagram</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>SQL validator test output</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Schema + generated SQL example</strong><span>Add screenshot / image here</span></div></div></div></section>
+
+<section><div class="section-head"><h2>Results so far</h2><p>What is finished, working or learned at the current stage.</p></div><div class="content-card"><ul class="content-list"><li>The project already has a working schema → LLM → generated SQL pipeline.</li><li>The current validator can parse SQL, identify query structure and check table names against the controlled schema.</li><li>Automatic execution remains intentionally disabled while the safety layer is being built.</li></ul></div></section>
+
+<section><div class="section-head"><h2>Code & repository</h2><p>Not every project can have public production code, especially employer work.</p></div><div class="content-card"><p>Repository will be linked when I publish the project.</p></div></section>
+
+<section><div class="section-head"><h2>What I’d do next</h2><p>What I’m building next, or what I would improve if I revisited the project.</p></div><div class="content-card"><ul class="content-list"><li>Add explicit dangerous-operation checks beyond SELECT validation.</li><li>Validate columns as well as table names.</li><li>Add more test cases for joins, aliases, CTEs and malformed SQL.</li><li>Add an evaluation set so safety failures can be measured rather than checked informally.</li></ul></div></section>
+</main>
+<footer class="wrap"><span>© <span id="year"></span> Ikanabasi Akpan</span><a href="../index.html#projects">Back to all projects ↑</a></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

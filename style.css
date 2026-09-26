@@ -1,0 +1,1038 @@
+/* =========================
+   COLORS / VARIABLES
+========================= */
+
+:root {
+  --bg: #08111f;
+  --panel: #0e1a2b;
+  --panel-2: #111f33;
+
+  --text: #eff6ff;
+  --muted: #9fb2ca;
+
+  --line: rgba(255, 255, 255, 0.1);
+
+  --accent: #6ee7f9;
+  --accent-2: #8b5cf6;
+
+  --good: #4ade80;
+
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+
+  --max: 1180px;
+}
+
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  font-family: "DM Sans", system-ui, sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(110, 231, 249, 0.12),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(139, 92, 246, 0.14),
+      transparent 30%
+    ),
+
+    var(--bg);
+
+  line-height: 1.6;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.wrap {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  backdrop-filter: blur(18px);
+
+  background: rgba(8, 17, 31, 0.72);
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.nav-inner {
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+.brand {
+  font-family: "Space Grotesk";
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+
+.brand span {
+  color: var(--accent);
+}
+
+
+.nav-links {
+  display: flex;
+
+  gap: 24px;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 12px 17px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  font-size: 0.95rem;
+
+  border: 1px solid var(--line);
+
+  transition: 0.2s ease;
+}
+
+
+.button.primary {
+  color: #07111e;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      #b4f7ff
+    );
+
+  border: none;
+}
+
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 96px 0 76px;
+
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 52px;
+
+  align-items: center;
+}
+
+
+.hero-side {
+  display: grid;
+
+  gap: 16px;
+}
+
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
+.photo-card {
+  position: relative;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  box-shadow: var(--shadow);
+
+  aspect-ratio: 4 / 4.6;
+}
+
+
+.photo-card img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+
+.photo-note {
+  position: absolute;
+
+  left: 18px;
+
+  bottom: 18px;
+
+  right: 18px;
+
+  padding: 12px 14px;
+
+  border-radius: 14px;
+
+  background: rgba(8, 17, 31, 0.78);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid var(--line);
+
+  color: #dbeafe;
+
+  font-size: 0.82rem;
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--accent);
+
+  font-weight: 700;
+
+  font-size: 0.86rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+}
+
+
+.eyebrow::before {
+  content: "";
+
+  width: 34px;
+
+  height: 1px;
+
+  background: var(--accent);
+}
+
+
+h1 {
+  font-family: "Space Grotesk";
+
+  font-size: clamp(3rem, 7vw, 6.6rem);
+
+  line-height: 0.95;
+
+  margin: 20px 0 24px;
+
+  letter-spacing: -0.055em;
+}
+
+
+.gradient {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 5%,
+      var(--accent) 50%,
+      #b39bff 90%
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.hero p {
+  max-width: 720px;
+
+  color: var(--muted);
+
+  font-size: 1.15rem;
+}
+
+
+.hero-actions {
+  margin-top: 32px;
+
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+
+.meta {
+  margin-top: 34px;
+
+  display: flex;
+
+  gap: 22px;
+
+  flex-wrap: wrap;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+
+.meta strong {
+  color: var(--text);
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+  position: relative;
+
+  padding: 28px;
+
+  border-radius: 26px;
+
+  border: 1px solid var(--line);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+
+.profile-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -30px;
+
+  bottom: -60px;
+
+  width: 180px;
+
+  height: 180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(110, 231, 249, 0.22),
+      transparent 65%
+    );
+}
+
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 0.82rem;
+
+  color: #c7f9d6;
+
+  border: 1px solid rgba(74, 222, 128, 0.22);
+
+  background: rgba(74, 222, 128, 0.08);
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+}
+
+
+.dot {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--good);
+
+  box-shadow: 0 0 18px var(--good);
+}
+
+
+.profile-card h3 {
+  margin: 24px 0 8px;
+
+  font-family: "Space Grotesk";
+
+  font-size: 1.35rem;
+}
+
+
+.profile-card ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 18px 0 0;
+
+  display: grid;
+
+  gap: 13px;
+
+  color: var(--muted);
+}
+
+
+.profile-card li {
+  display: flex;
+
+  gap: 10px;
+}
+
+
+.profile-card li::before {
+  content: "↗";
+
+  color: var(--accent);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  padding: 82px 0;
+}
+
+
+.section-head {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 34px;
+}
+
+
+.section-head h2 {
+  font-family: "Space Grotesk";
+
+  font-size: clamp(2rem, 4vw, 3.3rem);
+
+  letter-spacing: -0.04em;
+
+  margin: 0;
+}
+
+
+.section-head p {
+  max-width: 620px;
+
+  color: var(--muted);
+
+  margin: 0;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 22px;
+}
+
+
+.card {
+  border: 1px solid var(--line);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border-radius: 20px;
+
+  padding: 28px;
+}
+
+
+.card p {
+  color: var(--muted);
+
+  margin: 0;
+}
+
+
+.principles {
+  display: grid;
+
+  gap: 14px;
+}
+
+
+.principle {
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid var(--line);
+}
+
+
+.principle strong {
+  display: block;
+
+  margin-bottom: 3px;
+}
+
+
+.principle span {
+  color: var(--muted);
+
+  font-size: 0.92rem;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+.project {
+  min-height: 325px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border: 1px solid var(--line);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  transition: 0.25s ease;
+}
+
+
+.project:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(110, 231, 249, 0.28);
+}
+
+
+.project-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  align-items: flex-start;
+}
+
+
+.badge {
+  display: inline-flex;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+
+  border: 1px solid var(--line);
+
+  color: var(--muted);
+}
+
+
+.badge.live {
+  color: #c8ffd7;
+
+  border-color: rgba(74, 222, 128, 0.2);
+
+  background: rgba(74, 222, 128, 0.07);
+}
+
+
+.badge.build {
+  color: #d6f7ff;
+
+  border-color: rgba(110, 231, 249, 0.2);
+
+  background: rgba(110, 231, 249, 0.07);
+}
+
+
+.badge.prototype {
+  color: #eee5ff;
+
+  border-color: rgba(139, 92, 246, 0.26);
+
+  background: rgba(139, 92, 246, 0.08);
+}
+
+
+.project h3 {
+  font-family: "Space Grotesk";
+
+  font-size: 1.5rem;
+
+  margin: 18px 0 8px;
+}
+
+
+.project p {
+  color: var(--muted);
+
+  margin: 0;
+}
+
+
+.stack {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  margin-top: 22px;
+}
+
+
+.chip {
+  font-size: 0.78rem;
+
+  color: #c8d7e9;
+
+  border: 1px solid var(--line);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  padding: 6px 9px;
+
+  border-radius: 8px;
+}
+
+
+.project-foot {
+  margin-top: 26px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--line);
+
+  color: #c8d7e9;
+
+  font-size: 0.9rem;
+}
+
+
+.project-open {
+  margin-top: 14px;
+
+  color: var(--accent);
+
+  font-weight: 700;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience {
+  display: grid;
+
+  gap: 18px;
+}
+
+
+.role {
+  display: grid;
+
+  grid-template-columns: 210px 1fr;
+
+  gap: 28px;
+
+  padding: 24px 0;
+
+  border-top: 1px solid var(--line);
+}
+
+
+.role:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+
+.role .time {
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+
+.role h3 {
+  margin: 0 0 5px;
+
+  font-family: "Space Grotesk";
+}
+
+
+.role .company {
+  color: var(--accent);
+
+  margin-bottom: 12px;
+}
+
+
+.role ul {
+  margin: 0;
+
+  padding-left: 18px;
+
+  color: var(--muted);
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+
+.skill-box {
+  border: 1px solid var(--line);
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.skill-box h4 {
+  margin: 0 0 12px;
+
+  font-family: "Space Grotesk";
+}
+
+
+.skill-box p {
+  color: var(--muted);
+
+  margin: 0;
+
+  font-size: 0.92rem;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-card {
+  border: 1px solid var(--line);
+
+  border-radius: 28px;
+
+  padding: 42px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(110, 231, 249, 0.08),
+      rgba(139, 92, 246, 0.09)
+    );
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 32px;
+
+  align-items: center;
+}
+
+
+.contact-card h2 {
+  margin: 0 0 10px;
+
+  font-family: "Space Grotesk";
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+
+.contact-card p {
+  color: var(--muted);
+
+  max-width: 650px;
+
+  margin: 0;
+}
+
+
+.contact-actions {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 30px 0 46px;
+
+  color: var(--muted);
+
+  font-size: 0.86rem;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero,
+  .about-grid,
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .hero-side {
+    max-width: 620px;
+  }
+
+
+  .profile-card {
+    max-width: 620px;
+  }
+
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .role {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .contact-actions {
+    justify-content: flex-start;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+
+  .wrap {
+    width: min(
+      var(--max),
+      calc(100% - 26px)
+    );
+  }
+
+
+  .nav-links {
+    display: none;
+  }
+
+
+  .hero {
+    padding-top: 68px;
+  }
+
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .section-head {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  footer {
+    flex-direction: column;
+  }
+}

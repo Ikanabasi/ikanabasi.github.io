@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="Insurance Policy Verification Automation — project case study by Ikanabasi Akpan." />
+<title>Insurance Policy Verification Automation | Ikanabasi Akpan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+<nav><div class="wrap nav-inner"><a class="brand" href="../index.html">IA<span>.</span></a><a class="back" href="../index.html#projects">← Back to projects</a></div></nav>
+<main class="wrap">
+<header class="hero">
+<div>
+<div class="eyebrow">Project 04 · Delivered</div>
+<h1>Insurance Policy Verification Automation</h1>
+<p class="lead">At Anchor Insurance, I automated a repetitive policy-verification task covering roughly 5,000 policies and reduced a large amount of manual checking to a process that could be completed in about three days.</p>
+<div class="actions"><a class="button primary" href="#overview">Read the case study ↓</a><span class="button secondary disabled">Code availability noted below</span></div>
+</div>
+<aside class="summary-card">
+<h3>At a glance</h3>
+<div class="summary-list">
+<div class="summary-item"><span>Status</span><strong><span class="badge live">Delivered</span></strong></div>
+<div class="summary-item"><span>Context</span><strong>Anchor Insurance Company Ltd</strong></div>
+<div class="summary-item"><span>When</span><strong>Professional work</strong></div>
+<div class="summary-item"><span>Tools</span><div class="stack tool-stack"><span class="chip">Python</span><span class="chip">Selenium</span><span class="chip">BeautifulSoup</span><span class="chip">SQL</span><span class="chip">Excel</span><span class="chip">Automation</span></div></div>
+</div>
+</aside>
+</header>
+
+<section id="overview"><div class="section-head"><h2>Overview</h2><p>The short version of what this project is and why I worked on it.</p></div><div class="content-card"><p>This was a real operations problem rather than a portfolio exercise. The team needed to verify a large set of policies, and doing that record by record was slow and repetitive.</p><p>I used Python automation to handle the repeatable parts of the process, collect the needed information and make the final verification work easier to complete.</p></div></section>
+
+<section><div class="section-head"><h2>The problem</h2><p>What needed to be solved before thinking about tools or models.</p></div><div class="two-col"><div class="list-card"><h3>What made it difficult</h3><ul><li>Thousands of policies had to be checked.</li><li>The original process involved repetitive manual steps.</li><li>The work needed to be completed accurately without turning automation into a black box.</li></ul></div><div class="list-card"><h3>What I built / designed</h3><ul><li>Python automation for the repeatable verification steps.</li><li>Browser/data extraction logic using Selenium and BeautifulSoup where needed.</li><li>A structured workflow for working through the policy list and capturing results.</li><li>Checks that made it easier to review failed or incomplete cases separately.</li></ul></div></div></section>
+
+<section><div class="section-head"><h2>How it works</h2><p>A simplified view of the system or workflow.</p></div><div class="content-card"><div class="architecture"><span class="node">Policy list</span><span class="arrow">→</span><span class="node">Python automation</span><span class="arrow">→</span><span class="node">Policy lookup</span><span class="arrow">→</span><span class="node">Extract / compare</span><span class="arrow">→</span><span class="node">Flag exceptions</span><span class="arrow">→</span><span class="node">Verification output</span></div></div></section>
+
+
+
+<section><div class="section-head"><h2>Project visuals</h2><p>This is where I’ll add real screenshots, diagrams and outputs as the project develops.</p></div><div class="visual-grid"><div class="visual-slot"><div><strong>Redacted workflow diagram</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Example exception report</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Before / after process comparison</strong><span>Add screenshot / image here</span></div></div></div></section>
+
+<section><div class="section-head"><h2>Results so far</h2><p>What is finished, working or learned at the current stage.</p></div><div class="content-card"><ul class="content-list"><li>Roughly 5,000 policies were handled through the automated workflow.</li><li>The verification work was completed in about three days.</li><li>The project reduced repetitive manual effort and showed me how useful small, targeted automation can be in day-to-day operations.</li></ul></div></section>
+
+<section><div class="section-head"><h2>Code & repository</h2><p>Not every project can have public production code, especially employer work.</p></div><div class="content-card"><p>The original code was written for my employer and is not published. I can discuss the approach and design decisions without exposing company code or data.</p></div></section>
+
+<section><div class="section-head"><h2>What I’d do next</h2><p>What I’m building next, or what I would improve if I revisited the project.</p></div><div class="content-card"><ul class="content-list"><li>If I rebuilt this today, I would add stronger logging, retry handling and a clearer exception dashboard.</li><li>I would also separate scraping, validation and reporting into testable modules.</li></ul></div></section>
+</main>
+<footer class="wrap"><span>© <span id="year"></span> Ikanabasi Akpan</span><a href="../index.html#projects">Back to all projects ↑</a></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

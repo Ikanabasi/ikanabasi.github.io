@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="Agentic AI Professional Networking Assistant — project case study by Ikanabasi Akpan." />
+<title>Agentic AI Professional Networking Assistant | Ikanabasi Akpan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+<nav><div class="wrap nav-inner"><a class="brand" href="../index.html">IA<span>.</span></a><a class="back" href="../index.html#projects">← Back to projects</a></div></nav>
+<main class="wrap">
+<header class="hero">
+<div>
+<div class="eyebrow">Project 02 · Prototype</div>
+<h1>Agentic AI Professional Networking Assistant</h1>
+<p class="lead">I’m designing a human-in-the-loop assistant for a lawyer who wants a better way to discover, review and keep track of useful professional connections without automating the relationship itself.</p>
+<div class="actions"><a class="button primary" href="#overview">Read the case study ↓</a><span class="button secondary disabled">Code availability noted below</span></div>
+</div>
+<aside class="summary-card">
+<h3>At a glance</h3>
+<div class="summary-list">
+<div class="summary-item"><span>Status</span><strong><span class="badge prototype">Prototype</span></strong></div>
+<div class="summary-item"><span>Context</span><strong>Client-facing project prototype</strong></div>
+<div class="summary-item"><span>When</span><strong>2026</strong></div>
+<div class="summary-item"><span>Tools</span><div class="stack tool-stack"><span class="chip">n8n</span><span class="chip">PostgreSQL</span><span class="chip">Streamlit</span><span class="chip">Python</span><span class="chip">OpenAI</span><span class="chip">Exa</span><span class="chip">Email</span></div></div>
+</div>
+</aside>
+</header>
+
+<section id="overview"><div class="section-head"><h2>Overview</h2><p>The short version of what this project is and why I worked on it.</p></div><div class="content-card"><p>The idea is not to build a bot that sends connection requests or messages for the lawyer. The useful part is the research and organization around that work: finding people, checking why they may be relevant, remembering previous decisions and surfacing meaningful updates.</p><p>Before building the backend, I’m creating a click-through prototype so the lawyer can react to the workflow, the wording and the approval steps. That lets me validate the product before spending time on integrations.</p></div></section>
+
+<section><div class="section-head"><h2>The problem</h2><p>What needed to be solved before thinking about tools or models.</p></div><div class="two-col"><div class="list-card"><h3>What made it difficult</h3><ul><li>Professional networking research is repetitive and easy to lose track of.</li><li>A fully automated LinkedIn agent would remove too much human judgment from a relationship-driven task.</li><li>The system needs long-term memory so it does not keep recommending the same people or forget prior decisions.</li></ul></div><div class="list-card"><h3>What I built / designed</h3><ul><li>Defined the end-to-end workflow from preferences to discovery, review and relationship memory.</li><li>Designed approve, save, reject and “not now” decision states.</li><li>Designed weekly email briefs that link back to a dashboard.</li><li>Planned connection tracking and meaningful public-web update alerts.</li><li>Planned AI-assisted comment suggestions while keeping posting manual.</li></ul></div></div></section>
+
+<section><div class="section-head"><h2>How it works</h2><p>A simplified view of the system or workflow.</p></div><div class="content-card"><div class="architecture"><span class="node">Lawyer preferences</span><span class="arrow">→</span><span class="node">n8n workflow</span><span class="arrow">→</span><span class="node">Exa research</span><span class="arrow">→</span><span class="node">OpenAI analysis</span><span class="arrow">→</span><span class="node">PostgreSQL memory</span><span class="arrow">→</span><span class="node">Streamlit review</span><span class="arrow">→</span><span class="node">Human action on LinkedIn</span></div></div></section>
+
+
+
+<section><div class="section-head"><h2>Project visuals</h2><p>This is where I’ll add real screenshots, diagrams and outputs as the project develops.</p></div><div class="visual-grid"><div class="visual-slot"><div><strong>Recommendation dashboard mockup</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Email → dashboard flow</strong><span>Add screenshot / image here</span></div></div><div class="visual-slot"><div><strong>Connection memory / status screen</strong><span>Add screenshot / image here</span></div></div></div></section>
+
+<section><div class="section-head"><h2>Results so far</h2><p>What is finished, working or learned at the current stage.</p></div><div class="content-card"><ul class="content-list"><li>The system boundary is defined: AI researches and recommends; the lawyer decides and acts.</li><li>The core screens and approval flow are being prototyped before implementation.</li><li>The planned stack separates orchestration, memory, deterministic logic and AI reasoning instead of forcing everything into one model call.</li></ul></div></section>
+
+<section><div class="section-head"><h2>Code & repository</h2><p>Not every project can have public production code, especially employer work.</p></div><div class="content-card"><p>Backend code has not been written yet. I’m validating the prototype first.</p></div></section>
+
+<section><div class="section-head"><h2>What I’d do next</h2><p>What I’m building next, or what I would improve if I revisited the project.</p></div><div class="content-card"><ul class="content-list"><li>Finish the click-through prototype and review it with the lawyer.</li><li>Update terminology and workflow based on feedback.</li><li>Build the PostgreSQL memory model and n8n orchestration only after validation.</li><li>Add evaluation for recommendation quality and duplicate/irrelevant candidates.</li></ul></div></section>
+</main>
+<footer class="wrap"><span>© <span id="year"></span> Ikanabasi Akpan</span><a href="../index.html#projects">Back to all projects ↑</a></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
