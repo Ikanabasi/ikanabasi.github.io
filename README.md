@@ -12,7 +12,7 @@ My work focuses on solving real business problems, whether that's improving data
 
 ## Explore My Portfolio
 
-**[Visit My Portfolio Website](https://ikanabasi.github.io/portfolio/)**
+**[Visit My Portfolio Website](https://ikanabasi.github.io)**
 
 My portfolio brings together my technical projects, professional experience, and the technologies I use to develop data-driven solutions.
 
