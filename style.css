@@ -1,30 +1,40 @@
 
-/* ====================================
-   IKANABASI AKPAN PORTFOLIO
-   WHITE & BUTTER YELLOW THEME
-==================================== */
+/* ============================================
+   IKANABASI AKPAN
+   DATA ANALYTICS & ENGINEERING PORTFOLIO
+   LIGHT BLUE + WHITE THEME
 
-/* THEME COLORS */
+   COMPLETE STYLESHEET
+   PROJECT IMAGES DISPLAY WITHOUT CROPPING
+============================================ */
+
+
+/* ============================================
+   1. THEME COLORS
+============================================ */
 
 :root {
-  --ink: #272719;
-  --muted: #6a6959;
+  --ink: #243447;
+  --muted: #64748b;
 
-  --gold: #e8b834;
-  --gold-dark: #a66c06;
+  --blue: #2563a6;
+  --blue-dark: #194c84;
 
-  --butter: #ffeda0;
-  --butter-light: #fff7d7;
+  --sky-blue: #bae6fd;
+  --ice-blue: #e0f2fe;
 
-  --cream: #fffdf5;
+  --cream: #f4faff;
   --white: #ffffff;
 
-  --line: #eadfbe;
+  --line: #d7e9f5;
 
-  --shadow: 0 20px 48px rgba(79, 66, 22, 0.09);
+  --shadow: 0 20px 48px rgba(37, 99, 166, 0.09);
 }
 
-/* GENERAL RESET */
+
+/* ============================================
+   2. GENERAL RESET
+============================================ */
 
 * {
   box-sizing: border-box;
@@ -38,8 +48,11 @@ body {
   margin: 0;
   background: var(--white);
   color: var(--ink);
+
   font-family: "DM Sans", sans-serif;
   line-height: 1.65;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -54,7 +67,7 @@ button {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid #bd7a00;
+  outline: 3px solid var(--blue);
   outline-offset: 4px;
 }
 
@@ -65,17 +78,21 @@ a:focus-visible {
 
 .section {
   padding: 86px 0;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 100px;
 }
 
-/* TYPOGRAPHY */
+
+/* ============================================
+   3. TYPOGRAPHY
+============================================ */
 
 .eyebrow {
   font-size: 0.77rem;
   letter-spacing: 0.16em;
   font-weight: 700;
+
   text-transform: uppercase;
-  color: #966000;
+  color: var(--blue);
 }
 
 h1,
@@ -110,10 +127,13 @@ p {
 }
 
 .accent-text {
-  color: var(--gold-dark);
+  color: var(--blue);
 }
 
-/* NAVIGATION */
+
+/* ============================================
+   4. NAVIGATION
+============================================ */
 
 header {
   position: sticky;
@@ -121,7 +141,9 @@ header {
   z-index: 10;
 
   background: rgba(255, 255, 255, 0.96);
+
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   border-bottom: 1px solid var(--line);
 }
@@ -140,27 +162,35 @@ header {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 1.26rem;
   font-weight: 700;
+
   white-space: nowrap;
 }
 
 .brand span {
-  color: var(--gold-dark);
+  color: var(--blue);
 }
 
 .nav-links {
   display: flex;
-  gap: 23px;
   align-items: center;
+  gap: 23px;
 
   font-size: 0.91rem;
   font-weight: 700;
 }
 
-.nav-links a:hover {
-  color: var(--gold-dark);
+.nav-links a {
+  transition: color 0.2s ease;
 }
 
-/* BUTTONS */
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+
+/* ============================================
+   5. BUTTONS
+============================================ */
 
 .btn {
   display: inline-flex;
@@ -170,34 +200,35 @@ header {
 
   padding: 12px 20px;
 
-  border: 1px solid #d4aa3b;
+  border: 1px solid #7dd3fc;
   border-radius: 13px;
 
-  background: var(--butter);
-  color: #29240f;
+  background: var(--sky-blue);
+  color: #173b59;
 
   font-weight: 800;
 
   transition:
-    transform 0.2s,
-    background 0.2s,
-    box-shadow 0.2s;
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  background: #ffe178;
-  box-shadow: 0 11px 25px rgba(153, 114, 15, 0.16);
+  background: #93c5fd;
+
+  box-shadow: 0 11px 25px rgba(37, 99, 166, 0.14);
 }
 
 .btn.secondary {
-  background: white;
-  color: #43350b;
-  border-color: #d6c590;
+  background: var(--white);
+  color: var(--ink);
+  border-color: #c2ddef;
 }
 
 .btn.secondary:hover {
-  background: var(--butter-light);
+  background: var(--ice-blue);
 }
 
 .btn.small {
@@ -214,10 +245,14 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+
   margin-top: 27px;
 }
 
-/* HERO SECTION */
+
+/* ============================================
+   6. HERO SECTION
+============================================ */
 
 .hero {
   position: relative;
@@ -226,13 +261,13 @@ header {
   background:
     radial-gradient(
       ellipse at 83% 42%,
-      #ffeca1 0,
-      transparent 41%
+      #dbeeff 0,
+      transparent 43%
     ),
     linear-gradient(
       118deg,
       #ffffff 20%,
-      #fffbec 90%
+      #f0f9ff 90%
     );
 
   padding: 92px 0 98px;
@@ -241,6 +276,7 @@ header {
 .hero-inner {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
+
   align-items: center;
   gap: 35px;
 }
@@ -251,89 +287,73 @@ header {
 }
 
 .hero-role {
-  color: #8d620e;
+  color: var(--blue);
   font-weight: 700;
+
   font-size: clamp(1.1rem, 2.4vw, 1.5rem);
 }
 
-/* Decorative hero — no portrait */
+
+/* ============================================
+   7. HERO PROFILE PHOTO
+============================================ */
 
 .hero-art {
-  min-height: 360px;
+  min-height: 400px;
   position: relative;
 
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-art .orb {
-  width: min(100%, 350px);
+.profile-photo-container {
+  width: min(100%, 380px);
   aspect-ratio: 1;
 
-  border-radius: 43% 57% 54% 46%;
+  position: relative;
+  padding: 12px;
 
   background: linear-gradient(
-    155deg,
-    #fff7d6,
-    #ffe087 63%,
-    #ffedb2
+    145deg,
+    #e0f2fe,
+    #bae6fd,
+    #dbeafe
   );
 
-  box-shadow: var(--shadow);
-  transform: rotate(-8deg);
+  border-radius: 45% 55% 52% 48%;
+
+  box-shadow:
+    0 20px 48px rgba(37, 99, 166, 0.15);
+
+  overflow: hidden;
+  transform: rotate(-5deg);
 }
 
-.floating-icon {
-  position: absolute;
-  top: 125px;
-  left: calc(50% - 52px);
+.profile-photo {
+  width: 100%;
+  height: 100%;
 
-  font-size: 6rem;
-  color: #916107;
-}
-
-.hero-art .tiny {
-  position: absolute;
-  top: 40px;
-  left: 5px;
-
-  background: white;
-  border: 1px solid #f7e9b9;
-  border-radius: 15px;
-
-  padding: 13px 17px;
-
-  font-weight: 700;
-  box-shadow: var(--shadow);
-
-  transform: rotate(-7deg);
-}
-
-.hero-art .art-card {
-  position: absolute;
-  inset: auto 12px 26px auto;
-
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid #f4e7b7;
-  border-radius: 21px;
-
-  padding: 20px 23px;
-  box-shadow: var(--shadow);
-
-  transform: rotate(5deg);
-}
-
-.hero-art .art-card strong {
   display: block;
-  font-size: 1.7rem;
-  color: var(--gold-dark);
+
+  object-fit: cover;
+  object-position: center 30%;
+
+  border-radius: 45% 55% 52% 48%;
+
+  transform: rotate(5deg) scale(1.08);
+
+  transition: transform 0.4s ease;
 }
 
-.hero-art .art-card small {
-  color: var(--muted);
+.profile-photo-container:hover .profile-photo {
+  transform: rotate(5deg) scale(1.14);
 }
 
-/* ABOUT SECTION */
+
+/* ============================================
+   8. ABOUT SECTION
+============================================ */
 
 .intro {
   max-width: 720px;
@@ -352,17 +372,28 @@ header {
   border-radius: 22px;
 
   padding: 27px;
+  background: #f8fcff;
 
-  background: var(--cream);
   box-shadow: var(--shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .tile:nth-child(2) {
-  background: #fff6d7;
+  background: var(--ice-blue);
 }
 
 .tile:nth-child(3) {
-  background: #fffbec;
+  background: #f0f9ff;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 24px 50px rgba(37, 99, 166, 0.12);
 }
 
 .tile-icon {
@@ -374,12 +405,16 @@ header {
   font-size: 0.94rem;
 }
 
-/* PROJECTS SECTION */
+
+/* ============================================
+   9. PROJECTS SECTION
+============================================ */
 
 .section-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
+
   gap: 22px;
 }
 
@@ -389,101 +424,181 @@ header {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 24px;
+  gap: 26px;
   margin-top: 34px;
 }
 
+
+/* ============================================
+   10. PROJECT CARDS
+============================================ */
+
 .project-card {
-  background: white;
+  background: var(--white);
+
   border: 1px solid var(--line);
-  border-radius: 22px;
+  border-radius: 24px;
 
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
 
-  box-shadow: 0 8px 24px rgba(75, 62, 20, 0.06);
+  box-shadow:
+    0 8px 24px rgba(37, 99, 166, 0.06);
 
   transition:
-    transform 0.22s,
-    box-shadow 0.22s;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 22px 45px rgba(37, 99, 166, 0.13);
+
+  border-color: #acd8f5;
 }
 
-.project-visual {
-  height: 175px;
 
-  display: grid;
-  place-items: center;
+/* ============================================
+   11. PROJECT IMAGES
+   FULL IMAGE — NO CROPPING
+============================================ */
+
+/*
+  IMPORTANT:
+
+  object-fit: contain displays the entire image.
+
+  It does not cut off the sides or top.
+
+  The card maintains a 16:9 preview area.
+
+  Images with different dimensions will have
+  some empty space around them rather than
+  being cropped.
+
+  Recommended screenshot dimensions:
+  1600 x 900 or 1920 x 1080.
+*/
+
+.project-visual {
+  width: 100%;
+
+  /* Keep a consistent screenshot display area */
+  aspect-ratio: 16 / 9;
+  height: auto;
 
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f0f9ff;
+
+  border-bottom: 1px solid var(--line);
 }
+
+/* Remove old decorative circles and overlays */
 
 .project-visual::before,
 .project-visual::after {
-  content: "";
+  content: none;
+  display: none;
+}
+
+/* Actual project image */
+
+.project-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  /* No zooming: preserve full screenshot */
+  transition: filter 0.25s ease;
+}
+
+/* Subtle hover highlight without cropping */
+
+.project-card:hover .project-image {
+  filter: brightness(1.025);
+}
+
+/* Fallback if screenshot is missing */
+
+.project-image-fallback {
+  display: none;
+
   position: absolute;
+  inset: 0;
 
-  width: 210px;
-  height: 210px;
-  border-radius: 45%;
+  align-items: center;
+  justify-content: center;
 
-  opacity: 0.4;
-  background: white;
+  padding: 28px;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #e0f2fe,
+    #f4faff
+  );
+
+  color: var(--blue-dark);
+
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
-.project-visual::before {
-  left: -65px;
-  bottom: -160px;
+.project-visual.image-missing .project-image {
+  display: none;
 }
 
-.project-visual::after {
-  right: -55px;
-  top: -155px;
+.project-visual.image-missing .project-image-fallback {
+  display: flex;
 }
 
-.project-visual span {
-  font-size: 4.2rem;
-  z-index: 1;
-}
 
-.visual-pink {
-  background: linear-gradient(120deg, #ffefac, #fff9d8);
-}
-
-.visual-yellow {
-  background: linear-gradient(120deg, #ffe59e, #fff4d1);
-}
-
-.visual-purple {
-  background: linear-gradient(120deg, #fff7dc, #ffe5a5);
-}
-
-.visual-peach {
-  background: linear-gradient(120deg, #fff4cd, #ffecb9);
-}
+/* ============================================
+   12. PROJECT CONTENT
+============================================ */
 
 .project-content {
-  padding: 25px;
+  padding: 26px;
 
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
+.project-content h3 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.project-content p {
+  font-size: 0.94rem;
+  margin: 8px 0 0;
+}
+
+/* Technology tags */
+
 .project-content .project-tags {
-  margin-top: 13px;
+  margin-top: 18px;
 
   display: flex;
-  gap: 7px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -493,56 +608,66 @@ header {
 
   border-radius: 999px;
 
-  background: #fff6df;
-  padding: 5px 9px;
+  background: #eaf6ff;
+  color: #285a86;
 
-  color: #78601f;
+  padding: 6px 11px;
 }
 
-.project-content p {
-  font-size: 0.94rem;
-  margin: 8px 0 0;
-}
+/* Bottom section */
 
 .project-foot {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 26px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 8px;
+  gap: 12px;
 }
+
+/* View project button */
 
 .project-foot button {
   border: 0;
-  background: transparent;
+  border-radius: 9px;
 
-  color: #8e6105;
+  background: #e0f2fe;
+  color: var(--blue-dark);
 
   font-weight: 800;
-  padding: 6px 0;
+  padding: 10px 15px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .project-foot button:hover {
-  text-decoration: underline;
+  background: #bae6fd;
+  transform: translateX(2px);
 }
+
+/* Project status */
 
 .status {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #7e7251;
+  color: #64748b;
 }
 
 .status.live {
   color: #226a57;
 }
 
-/* SKILLS SECTION */
+
+/* ============================================
+   13. SKILLS SECTION
+============================================ */
 
 #skills {
-  background: #fffaf0;
+  background: #f4faff;
 }
 
 .skills-grid {
@@ -554,7 +679,8 @@ header {
 }
 
 .skill-group {
-  background: white;
+  background: var(--white);
+
   border: 1px solid var(--line);
   border-radius: 22px;
 
@@ -570,8 +696,8 @@ header {
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
 
+  gap: 9px;
   margin-top: 15px;
 }
 
@@ -579,19 +705,26 @@ header {
   font-size: 0.82rem;
   font-weight: 700;
 
-  background: #fff7dc;
-  border: 1px solid #efdfac;
+  background: #eaf6ff;
+  border: 1px solid #d7e9f5;
 
-  color: #6a541d;
+  color: #285a86;
 
   padding: 7px 11px;
   border-radius: 999px;
 }
 
-/* EXPERIENCE SECTION */
+
+/* ============================================
+   14. EXPERIENCE SECTION
+============================================ */
 
 #experience {
-  background: linear-gradient(115deg, #ffffff, #fff7dc);
+  background: linear-gradient(
+    115deg,
+    #ffffff,
+    #eef8ff
+  );
 }
 
 .timeline {
@@ -603,7 +736,8 @@ header {
 }
 
 .timeline-item {
-  background: white;
+  background: var(--white);
+
   border: 1px solid var(--line);
   border-radius: 22px;
 
@@ -612,14 +746,17 @@ header {
 }
 
 .timeline-item b {
-  color: #916107;
+  color: var(--blue);
 }
 
 .timeline-item p {
   margin-bottom: 0;
 }
 
-/* CONTACT SECTION */
+
+/* ============================================
+   15. CONTACT SECTION
+============================================ */
 
 .contact-box {
   text-align: center;
@@ -630,15 +767,15 @@ header {
   background:
     radial-gradient(
       ellipse at 8% 20%,
-      #fff5d0 0,
+      #e0f2fe 0,
       transparent 40%
     ),
     radial-gradient(
       ellipse at 85% 85%,
-      #ffe69b 0,
+      #bfdeff 0,
       transparent 44%
     ),
-    #fffdf7;
+    #f8fcff;
 
   border: 1px solid var(--line);
 }
@@ -652,11 +789,13 @@ header {
   justify-content: center;
 }
 
-/* FOOTER */
+
+/* ============================================
+   16. FOOTER
+============================================ */
 
 footer {
   padding: 28px 0;
-
   border-top: 1px solid var(--line);
 
   font-size: 0.84rem;
@@ -671,7 +810,10 @@ footer {
   flex-wrap: wrap;
 }
 
-/* PROJECT POPUP */
+
+/* ============================================
+   17. PROJECT DETAILS POPUP
+============================================ */
 
 dialog {
   width: min(720px, calc(100% - 24px));
@@ -682,24 +824,27 @@ dialog {
 
   padding: 0;
 
-  background: white;
+  background: var(--white);
   color: var(--ink);
 
-  box-shadow: 0 30px 90px rgba(48, 40, 19, 0.33);
+  box-shadow:
+    0 30px 90px rgba(36, 52, 71, 0.28);
 }
 
 dialog::backdrop {
-  background: rgba(37, 32, 15, 0.57);
+  background: rgba(25, 47, 73, 0.57);
   backdrop-filter: blur(4px);
 }
+
+/* Popup header */
 
 .modal-head {
   padding: 29px 30px 20px;
 
   background: linear-gradient(
     110deg,
-    #fff2ba,
-    #fffdf2
+    #dbeafe,
+    #f8fcff
   );
 
   position: relative;
@@ -711,19 +856,29 @@ dialog::backdrop {
 
 .modal-close {
   position: absolute;
+
   right: 18px;
   top: 15px;
 
   width: 38px;
   height: 38px;
 
-  border: 1px solid #e2d3a2;
+  border: 1px solid #c6deef;
   border-radius: 50%;
 
-  background: white;
+  background: var(--white);
+  color: var(--ink);
 
   font-size: 1.35rem;
+
+  transition: background 0.2s ease;
 }
+
+.modal-close:hover {
+  background: var(--ice-blue);
+}
+
+/* Popup body */
 
 .modal-body {
   padding: 26px 30px 32px;
@@ -732,18 +887,19 @@ dialog::backdrop {
 .modal-body h3 {
   font-family: "DM Sans", sans-serif;
   font-size: 1.04rem;
-
   margin-top: 22px;
 }
 
 .modal-body ul {
   padding-left: 21px;
-  color: #5f5848;
+  color: #526476;
 }
 
 .modal-body li {
   margin-bottom: 8px;
 }
+
+/* Popup statistics */
 
 .modal-stats {
   display: grid;
@@ -754,7 +910,7 @@ dialog::backdrop {
 }
 
 .modal-stats div {
-  background: var(--cream);
+  background: #f4faff;
 
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -764,8 +920,8 @@ dialog::backdrop {
 
 .modal-stats strong {
   display: block;
-  color: #88600f;
 
+  color: var(--blue);
   font-size: 1.25rem;
 }
 
@@ -773,6 +929,8 @@ dialog::backdrop {
   font-size: 0.74rem;
   color: var(--muted);
 }
+
+/* Popup links */
 
 .modal-actions {
   display: flex;
@@ -782,17 +940,23 @@ dialog::backdrop {
   margin-top: 26px;
 }
 
+/* Popup notice */
+
 .notice {
   font-size: 0.85rem;
 
-  background: #fff7df;
-  color: #615126;
+  background: #eaf6ff;
+  color: #355875;
 
   padding: 14px;
   border-radius: 12px;
+  margin-top: 25px;
 }
 
-/* TABLETS */
+
+/* ============================================
+   18. TABLET RESPONSIVENESS
+============================================ */
 
 @media (max-width: 970px) {
   .nav-links {
@@ -811,13 +975,18 @@ dialog::backdrop {
   }
 
   .hero-art {
-    display: none;
+    min-height: auto;
+    margin-top: 25px;
+  }
+
+  .profile-photo-container {
+    width: min(100%, 320px);
   }
 
   .value-grid,
   .skills-grid,
   .timeline {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .section {
@@ -825,7 +994,10 @@ dialog::backdrop {
   }
 }
 
-/* MOBILE PHONES */
+
+/* ============================================
+   19. MOBILE RESPONSIVENESS
+============================================ */
 
 @media (max-width: 700px) {
   .nav {
@@ -859,11 +1031,24 @@ dialog::backdrop {
     padding: 64px 0;
   }
 
+  .profile-photo-container {
+    width: min(100%, 280px);
+  }
+
   .value-grid,
   .skills-grid,
   .projects-grid,
   .timeline {
     grid-template-columns: 1fr;
+  }
+
+  /*
+    DO NOT set a fixed height on .project-visual.
+    Its 16:9 aspect ratio is preserved on mobile.
+  */
+
+  .project-content {
+    padding: 22px;
   }
 
   .section-heading {
@@ -878,9 +1063,18 @@ dialog::backdrop {
   .modal-body {
     padding-inline: 20px;
   }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
-/* ACCESSIBILITY */
+
+/* ============================================
+   20. ACCESSIBILITY
+============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -888,7 +1082,20 @@ dialog::backdrop {
   }
 
   .project-card,
-  .btn {
+  .project-image,
+  .btn,
+  .tile,
+  .profile-photo {
     transition: none;
+  }
+
+  .project-card:hover,
+  .btn:hover,
+  .tile:hover {
+    transform: none;
+  }
+
+  .profile-photo-container:hover .profile-photo {
+    transform: rotate(5deg) scale(1.08);
   }
 }

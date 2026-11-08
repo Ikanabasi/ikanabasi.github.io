@@ -1,14 +1,18 @@
 
 // ===========================================
 // IKANABASI AKPAN PORTFOLIO
-// PROJECT DATA AND INTERACTIVITY
+// PROJECT DATA & INTERACTIVITY
 // ===========================================
 
-// Add and edit your projects here.
+// ===========================================
+// 1. PROJECT DATA
+// ===========================================
 
 const projects = [
 
+  // ----------------------------------------
   // PROJECT 1: DATAOPS SENTINEL
+  // ----------------------------------------
 
   {
     id: "sentinel",
@@ -17,35 +21,41 @@ const projects = [
 
     subtitle: "FDIC Banking Risk & Operations Monitor",
 
-    emoji: "🏦",
-
-    gradient: "visual-pink",
+    // Project thumbnail image
+    image: "assets/projects/dataops-sentinel.png",
 
     status: "Live project",
-
     statusClass: "live",
 
     short:
-      "An end-to-end data engineering and financial monitoring platform built on real FDIC data.",
+      "An end-to-end data engineering and financial monitoring platform built using real FDIC banking data.",
 
     description:
-      "I built a banking data platform that collects FDIC financial records through an API, transforms them into validated analytics-ready datasets and powers an interactive dashboard for exploring bank performance and monitoring signals.",
+      "DataOps Sentinel is an end-to-end financial data engineering and analytics platform. It collects real banking financial records from the FDIC API, validates and transforms the data through a Bronze-Silver-Gold pipeline, and delivers interactive financial monitoring dashboards.",
 
     problem:
-      "Banking data is useful only when it can be collected reliably, checked for quality and made understandable. I wanted to create a reproducible workflow that turns raw public financial reports into meaningful, explorable information.",
+      "Banking data can be difficult to analyze when it contains inconsistencies, missing values, or is spread across multiple reporting periods. I wanted to design a reliable, automated pipeline that converts raw banking information into trustworthy datasets and meaningful financial insights.",
 
     built: [
       "Ingested and processed 102,983 bank-quarter records across 22 reporting quarters.",
 
-      "Created Bronze, Silver and Gold data layers with quality validation and historical backfills.",
+      "Developed Python ingestion pipelines to collect real banking data through the FDIC API.",
 
-      "Used AWS S3, Glue and Athena for cloud storage and eight monitoring SQL views.",
+      "Implemented Bronze, Silver and Gold data layers for ingestion, cleaning, transformation and analytics.",
 
-      "Built an interactive Streamlit Executive Overview and Historical Explorer.",
+      "Built reusable data-quality validation checks to detect missing values, duplicates and invalid records.",
 
-      "Implemented automated testing, GitHub Actions and versioned snapshot integrity verification.",
+      "Used AWS S3 for storing datasets and Amazon Athena for SQL-based analytics.",
 
-      "Deployed a public financial monitoring dashboard using validated portfolio snapshots."
+      "Developed eight Gold SQL monitoring views to analyze banking risk and financial indicators.",
+
+      "Built a Streamlit dashboard with an Executive Overview and Historical Explorer.",
+
+      "Implemented automated tests and GitHub Actions workflows.",
+
+      "Created validated, versioned snapshots with SHA-256 integrity verification.",
+
+      "Deployed the interactive dashboard publicly using Streamlit Community Cloud."
     ],
 
     stats: [
@@ -63,7 +73,10 @@ const projects = [
       "Amazon Athena",
       "GitHub Actions",
       "Streamlit",
-      "Plotly"
+      "Plotly",
+      "pytest",
+      "Data Quality",
+      "REST APIs"
     ],
 
     note:
@@ -71,64 +84,69 @@ const projects = [
 
     links: [
       [
-        "Live Dashboard",
+        "View Live Dashboard",
         "https://data-ops-sentinel.streamlit.app/"
       ],
       [
-        "GitHub Repository",
+        "View GitHub Repository",
         "https://github.com/Ikanabasi/data-ops-sentinel"
       ]
     ]
   },
 
-  // PROJECT 2: BANKING RISK MONITOR
+  // ----------------------------------------
+  // PROJECT 2: BANKING TRANSACTION MONITOR
+  // ----------------------------------------
 
   {
     id: "risk",
 
     title: "Banking Transaction Risk Monitor",
 
-    subtitle: "Transaction Quality & Operational Risk",
+    subtitle: "Banking Analytics & Transaction Quality",
 
-    emoji: "📉",
-
-    gradient: "visual-yellow",
+    image: "assets/projects/banking-monitor.png",
 
     status: "Portfolio build",
-
     statusClass: "",
 
     short:
-      "A transaction data-quality and monitoring project focused on unusual banking activity.",
+      "A banking analytics project focused on data quality, transaction validation and unusual activity.",
 
     description:
-      "This project explores how to clean and validate banking transactions before producing transparent operational-risk indicators.",
+      "This project explores how banking transaction records can be cleaned, validated and analyzed to identify unusual transaction activity and support operational risk monitoring.",
 
     problem:
-      "Banking transaction feeds can contain missing identifiers, duplicates and inconsistent values. Reliable risk analysis depends on trustworthy records.",
+      "Financial transaction datasets can contain incomplete customer identifiers, duplicate transactions, invalid amounts and inconsistent information. If these issues are not addressed, downstream analytics and risk indicators can become unreliable.",
 
     built: [
-      "Designed reusable data-validation functions.",
+      "Designed reusable Python data-quality validation functions.",
 
-      "Implemented required-field, numeric, date and uniqueness checks.",
+      "Implemented required-field, numeric, date, range and uniqueness checks.",
 
-      "Separated valid and rejected records with clear rejection reasons.",
+      "Separated valid and rejected transaction records.",
 
-      "Designed monitoring indicators for abnormal amounts, unusual channels and international transactions."
+      "Generated rejection reasons to support data-quality investigations.",
+
+      "Designed PostgreSQL tables for banking transaction analytics.",
+
+      "Explored risk indicators such as abnormal transaction amounts, international activity and unusual channels."
     ],
 
     stats: [
       ["100K", "Sample transactions"],
-      ["Python", "Data quality"],
+      ["Python", "Validation"],
       ["SQL", "Analytics"]
     ],
 
     tech: [
       "Python",
       "Pandas",
-      "PostgreSQL",
       "SQL",
-      "Data Validation"
+      "PostgreSQL",
+      "Data Validation",
+      "ETL",
+      "Banking Analytics"
     ],
 
     note:
@@ -137,7 +155,9 @@ const projects = [
     links: []
   },
 
+  // ----------------------------------------
   // PROJECT 3: SAFE TEXT-TO-SQL
+  // ----------------------------------------
 
   {
     id: "textsql",
@@ -146,37 +166,36 @@ const projects = [
 
     subtitle: "Trustworthy SQL Generation on Large Schemas",
 
-    emoji: "🧠",
-
-    gradient: "visual-purple",
+    image: "assets/projects/text-to-sql.png",
 
     status: "Research prototype",
-
     statusClass: "",
 
     short:
-      "An LLM-powered SQL generation prototype with syntax and schema validation.",
+      "An LLM-powered SQL generation research project with parsing, schema validation and safety checks.",
 
     description:
-      "A research-oriented system exploring when generated SQL is safe enough to return—and when the system should abstain.",
+      "This research project investigates how large language models can generate SQL queries more reliably on complex database schemas, with validation safeguards and a mechanism for refusing uncertain outputs.",
 
     problem:
-      "LLM-generated SQL can look plausible while referencing nonexistent tables or columns, or producing incorrect answers on large schemas.",
+      "Large language models sometimes generate SQL queries that appear correct but reference invalid columns or tables, use incorrect joins or produce plausible but incorrect analytical results. These failures are particularly concerning in enterprise environments.",
 
     built: [
-      "Implemented PostgreSQL schema introspection.",
+      "Implemented PostgreSQL schema introspection to retrieve table and column metadata.",
 
-      "Used SQLGlot to parse generated SQL queries.",
+      "Integrated LLM-generated SQL into a validation pipeline.",
 
-      "Designed table and column validation.",
+      "Used SQLGlot to parse generated queries.",
+
+      "Developed table and column validation checks.",
 
       "Explored abstention and failure classification.",
 
-      "Developed a framework for evaluating query accuracy and coverage."
+      "Designed evaluation metrics including accuracy on answered queries and coverage."
     ],
 
     stats: [
-      ["SQLGlot", "Query parsing"],
+      ["SQLGlot", "SQL parsing"],
       ["Schema", "Validation"],
       ["LLM", "Research"]
     ],
@@ -186,7 +205,9 @@ const projects = [
       "PostgreSQL",
       "SQLGlot",
       "OpenAI API",
-      "LLMs"
+      "LLMs",
+      "Schema Validation",
+      "AI Evaluation"
     ],
 
     note:
@@ -195,46 +216,47 @@ const projects = [
     links: []
   },
 
+  // ----------------------------------------
   // PROJECT 4: AI NETWORKING ASSISTANT
+  // ----------------------------------------
 
   {
     id: "network",
 
     title: "AI Networking Assistant",
 
-    subtitle: "Human-in-the-Loop AI Workflows",
+    subtitle: "Human-in-the-Loop Agentic AI",
 
-    emoji: "🤖",
-
-    gradient: "visual-peach",
+    image: "assets/projects/ai-networking.png",
 
     status: "Prototype",
-
     statusClass: "",
 
     short:
-      "An AI-assisted workflow for researching professional connections and preparing thoughtful engagement.",
+      "An AI-powered assistant prototype designed to support professional networking research and engagement preparation.",
 
     description:
-      "A human-reviewed AI assistant concept for helping professionals discover relevant connections, track activity and prepare context-aware engagement.",
+      "An agentic AI assistant prototype that explores how AI can help professionals discover relevant networking opportunities, track activity and prepare thoughtful engagement suggestions while keeping a human in control.",
 
     problem:
-      "Professional networking requires research, relevance and thoughtful follow-up. Fully automated engagement can produce unreliable or inappropriate results.",
+      "Professional networking takes time and research. Finding relevant contacts, understanding their professional activity and planning meaningful engagement can become repetitive and difficult to manage.",
 
     built: [
-      "Prototyped connection and candidate discovery.",
+      "Prototyped professional connection discovery workflows.",
 
-      "Designed relevance ranking and activity tracking.",
+      "Designed candidate ranking and tracking processes.",
 
-      "Developed human approval workflows.",
+      "Explored activity monitoring and engagement suggestions.",
 
-      "Explored tracking, cooldown logic and engagement preparation."
+      "Developed human-review and approval concepts.",
+
+      "Designed candidate cooldown and engagement tracking."
     ],
 
     stats: [
+      ["Agentic", "AI workflow"],
       ["Human", "Approval"],
-      ["Agentic", "Workflows"],
-      ["AI", "Prototype"]
+      ["Python", "Automation"]
     ],
 
     tech: [
@@ -242,42 +264,69 @@ const projects = [
       "Playwright",
       "OpenAI API",
       "PostgreSQL",
-      "Streamlit"
+      "Streamlit",
+      "AI Agents",
+      "Automation"
     ],
 
     note:
-      "Research prototype with human oversight. Not presented as a fully deployed automatic outreach system.",
+      "Research prototype with human oversight; not presented as a fully deployed automatic outreach system.",
 
     links: []
   }
 
 ];
 
+
 // ===========================================
-// GENERATE THE PROJECT CARDS
+// 2. GENERATE THE PROJECT CARDS
 // ===========================================
 
 const grid = document.getElementById("projectGrid");
 
-projects.forEach(project => {
+projects.forEach((project) => {
 
+  // Create project card
   const article = document.createElement("article");
   article.className = "project-card";
 
-  // Project visual
+  // -----------------------------------------
+  // PROJECT IMAGE
+  // -----------------------------------------
+
   const visual = document.createElement("div");
+  visual.className = "project-visual";
 
-  visual.className =
-    `project-visual ${project.gradient}`;
+  const image = document.createElement("img");
 
-  visual.setAttribute("aria-hidden", "true");
+  image.src = project.image;
+  image.alt = `${project.title} project preview`;
+  image.className = "project-image";
 
-  const emoji = document.createElement("span");
-  emoji.textContent = project.emoji;
+  image.loading = "lazy";
+  image.decoding = "async";
 
-  visual.appendChild(emoji);
+  // Fallback text if the image is missing
+  const fallback = document.createElement("div");
 
-  // Card content
+  fallback.className = "project-image-fallback";
+  fallback.textContent = project.title;
+
+  // If image cannot load, show fallback
+  image.addEventListener("error", () => {
+    visual.classList.add("image-missing");
+  });
+
+  image.addEventListener("load", () => {
+    visual.classList.remove("image-missing");
+  });
+
+  visual.append(image, fallback);
+
+  // -----------------------------------------
+  // PROJECT INFORMATION
+  // -----------------------------------------
+
   const content = document.createElement("div");
   content.className = "project-content";
 
@@ -291,43 +340,54 @@ projects.forEach(project => {
   const description = document.createElement("p");
   description.textContent = project.short;
 
-  // Technology tags
+  // -----------------------------------------
+  // TECHNOLOGY TAGS
+  // -----------------------------------------
+
   const tags = document.createElement("div");
   tags.className = "project-tags";
 
-  project.tech.slice(0, 4).forEach(technology => {
+  project.tech.slice(0, 4).forEach((technology) => {
 
     const tag = document.createElement("span");
+
     tag.textContent = technology;
 
     tags.appendChild(tag);
 
   });
 
-  // Card bottom area
+  // -----------------------------------------
+  // CARD FOOTER
+  // -----------------------------------------
+
   const footer = document.createElement("div");
   footer.className = "project-foot";
 
   const status = document.createElement("span");
 
-  status.className =
-    `status ${project.statusClass}`;
+  status.className = `status ${project.statusClass}`;
 
   status.textContent = project.status;
 
   const button = document.createElement("button");
 
   button.type = "button";
-  button.textContent = "View project details →";
+  button.textContent = "View project →";
 
   button.setAttribute(
     "aria-label",
     `View details for ${project.title}`
   );
 
+  // Open details popup on click
   button.addEventListener("click", () => {
     openProject(project.id);
   });
+
+  // -----------------------------------------
+  // COMBINE CARD ELEMENTS
+  // -----------------------------------------
 
   footer.append(status, button);
 
@@ -340,12 +400,15 @@ projects.forEach(project => {
   );
 
   article.append(visual, content);
+
+  // Add the card to the Projects section
   grid.appendChild(article);
 
 });
 
+
 // ===========================================
-// PROJECT DETAILS POPUP
+// 3. PROJECT DETAILS POPUP
 // ===========================================
 
 const dialog = document.getElementById("projectDialog");
@@ -355,14 +418,19 @@ let lastFocus = null;
 function openProject(projectId) {
 
   const project = projects.find(
-    item => item.id === projectId
+    (item) => item.id === projectId
   );
 
-  if (!project) return;
+  if (!project) {
+    return;
+  }
 
   lastFocus = document.activeElement;
 
-  // Title
+  // -----------------------------------------
+  // PROJECT TITLE AND SUBTITLE
+  // -----------------------------------------
+
   document.getElementById("modalTitle").textContent =
     project.title;
 
@@ -372,7 +440,10 @@ function openProject(projectId) {
   document.getElementById("modalEyebrow").textContent =
     project.status;
 
-  // Description and problem
+  // -----------------------------------------
+  // DESCRIPTION AND PROBLEM
+  // -----------------------------------------
+
   document.getElementById("modalDescription").textContent =
     project.description;
 
@@ -382,7 +453,10 @@ function openProject(projectId) {
   document.getElementById("modalNote").textContent =
     project.note;
 
-  // Stats
+  // -----------------------------------------
+  // PROJECT STATISTICS
+  // -----------------------------------------
+
   const statsContainer =
     document.getElementById("modalStats");
 
@@ -399,17 +473,21 @@ function openProject(projectId) {
     caption.textContent = label;
 
     box.append(strong, caption);
+
     statsContainer.appendChild(box);
 
   });
 
-  // What I built
+  // -----------------------------------------
+  // WHAT I BUILT
+  // -----------------------------------------
+
   const builtList =
     document.getElementById("modalBuilt");
 
   builtList.replaceChildren();
 
-  project.built.forEach(item => {
+  project.built.forEach((item) => {
 
     const listItem = document.createElement("li");
 
@@ -419,23 +497,30 @@ function openProject(projectId) {
 
   });
 
-  // Technologies
+  // -----------------------------------------
+  // TECHNOLOGIES
+  // -----------------------------------------
+
   const technologyContainer =
     document.getElementById("modalTech");
 
   technologyContainer.replaceChildren();
 
-  project.tech.forEach(item => {
+  project.tech.forEach((technology) => {
 
     const tag = document.createElement("span");
+
     tag.className = "chip";
-    tag.textContent = item;
+    tag.textContent = technology;
 
     technologyContainer.appendChild(tag);
 
   });
 
-  // Links
+  // -----------------------------------------
+  // LIVE DEMO AND GITHUB LINKS
+  // -----------------------------------------
+
   const linksContainer =
     document.getElementById("modalLinks");
 
@@ -457,13 +542,14 @@ function openProject(projectId) {
       const link = document.createElement("a");
 
       link.href = url;
+
       link.target = "_blank";
       link.rel = "noopener noreferrer";
 
       link.className =
         index === 0 ? "btn" : "btn secondary";
 
-      link.textContent = label + " ↗";
+      link.textContent = `${label} ↗`;
 
       linksContainer.appendChild(link);
 
@@ -471,23 +557,26 @@ function openProject(projectId) {
 
   }
 
+  // Show popup
   dialog.showModal();
 
 }
 
+
 // ===========================================
-// CLOSE PROJECT POPUP
+// 4. CLOSE PROJECT POPUP
 // ===========================================
 
 const closeButton =
   document.getElementById("modalClose");
 
+// Close button
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
 
-// Close when clicking outside modal
-dialog.addEventListener("click", event => {
+// Close by clicking outside popup
+dialog.addEventListener("click", (event) => {
 
   if (event.target === dialog) {
     dialog.close();
@@ -504,8 +593,9 @@ dialog.addEventListener("close", () => {
 
 });
 
+
 // ===========================================
-// AUTOMATIC FOOTER YEAR
+// 5. AUTOMATIC FOOTER YEAR
 // ===========================================
 
 document.getElementById("year").textContent =
