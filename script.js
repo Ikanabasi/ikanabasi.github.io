@@ -79,9 +79,6 @@ const projects = [
       "REST APIs"
     ],
 
-    note:
-      "The public dashboard uses validated portfolio snapshots. The AWS pipeline runs separately; unattended new-quarter publishing has not been production-proven.",
-
     links: [
       [
         "View Live Dashboard",
