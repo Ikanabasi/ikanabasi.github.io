@@ -6,7 +6,7 @@ Welcome to my personal portfolio! I'm **Ikanabasi Akpan**, a data analytics and 
 
 I'm currently pursuing an **MSc in Computer Science at Algoma University**, where I'm expanding my knowledge of data engineering, machine learning, cloud computing, and applied artificial intelligence.
 
-My work focuses on solving real business problems—whether that's improving data quality, automating repetitive processes, building analytical dashboards, or developing systems that make information easier to understand and act on.
+My work focuses on solving real business problems, whether that's improving data quality, automating repetitive processes, building analytical dashboards, or developing systems that make information easier to understand and act on.
 
 ---
 
