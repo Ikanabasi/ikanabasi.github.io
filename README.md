@@ -20,7 +20,7 @@ You can explore individual projects, learn about my approach, and access live de
 
 ---
 
-## Featured Project — DataOps Sentinel
+## Featured Project - DataOps Sentinel
 
 ### AWS Banking Data Engineering & Financial Monitoring Platform
 
@@ -85,7 +85,7 @@ A human-in-the-loop AI assistant prototype designed to support professional netw
 
 ## Professional Background
 
-### ICT Officer & Data Automation — Anchor Insurance
+### ICT Officer & Data Automation - Anchor Insurance
 
 My experience at Anchor Insurance provided opportunities to apply technical problem-solving in a real business environment.
 
