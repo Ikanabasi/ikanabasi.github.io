@@ -1,0 +1,3 @@
+Place your actual current CV PDF here, named exactly Ikanabasi_Akpan_CV.pdf.
+The Download CV buttons will work once that file is committed to the same branch as index.html.
+Do not upload personal identifiers such as home address, SIN, date of birth or unnecessary contact details.
